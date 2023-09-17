@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background: #272829;
+  padding: 14px;
+
+  .header-interne {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-logo-menu {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      h1 {
+        font-size: 18px;
+        color: #fff;
+        margin: 0;
+        line-height: 250%;
+      }
+      .header-menu {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        .header-menu-item {
+          list-style: none;
+          font-size: 16px;
+          color: #fff;
+        }
+      }
+    }
+    .custom-outline {
+      border-color: red !important;
+      color: red !important;
+    }
+    .header-buttons {
+      .header-buttons-box {
+      }
+    }
+  }
+}

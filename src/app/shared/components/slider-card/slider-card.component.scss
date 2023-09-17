@@ -1,0 +1,28 @@
+.slider-card {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px;
+
+  .title {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+}
+
+.card {
+  position: relative;
+  img {
+    height: 200px;
+    width: 100%;
+  }
+  color: #fff ;
+}
+
+.slick-slide {
+  margin-right: 20px; /* Adjust the margin value as per your preference */
+}
+.slick-prev .slick-arrow {
+  color: red;
+  background: #000 !important;
+}

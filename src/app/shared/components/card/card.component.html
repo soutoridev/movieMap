@@ -1,0 +1,4 @@
+<div class="card" (click)="navigateToSomeRoute(card?.id)">
+  <img [src]="environment.tmdbUrlImage+''+card?.poster_path" alt="">
+  <h2 >{{ card?.title }}</h2>
+</div>

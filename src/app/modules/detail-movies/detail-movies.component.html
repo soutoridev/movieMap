@@ -1,1 +1,89 @@
-<p>detail-movies works!</p>
+<section>
+  <app-header></app-header>
+  <app-search></app-search>
+
+  <section class="details" *ngIf="!loader; else showLoader">
+    <div class="container">
+      <div class="box-left">
+        <img
+          [src]="environment.tmdbUrlImage + '' + movie?.poster_path"
+          alt=""
+        />
+      </div>
+
+      <div class="box-rigth">
+        <div>
+          <h2 class="title">{{ movie?.title }}</h2>
+          <div class="genres">
+            <div *ngFor="let genre of movie?.genres">
+              {{ getGenreById(genre.id) }}
+            </div>
+          </div>
+          <p>{{ movie?.overview }}</p>
+
+          <div class="list-micro-info">
+            <div class="item">
+              <mat-icon aria-hidden="false" aria-label="Example person icon"
+                >person</mat-icon
+              >
+              {{ movie?.adult ? "18 +" : "Livre" }}
+            </div>
+            <div class="item">
+              <mat-icon class="material-symbols-outlined"> schedule </mat-icon>
+              {{ convertTime(movie?.runtime) }}
+            </div>
+            <div class="item">
+              <mat-icon class="material-symbols-outlined">
+                calendar_month
+              </mat-icon>
+              {{ movie?.release_date | date : "dd/MM/YYYY" }}
+            </div>
+
+            <div class="item">
+              <mat-icon class="material-symbols-outlined">
+                monetization_on
+              </mat-icon>
+              {{ movie?.budget | currency }}
+            </div>
+          </div>
+        </div>
+
+        <div class="collection-companies">
+          <div class="belongs-collection" *ngIf="movie?.belongs_to_collection">
+            <h3>{{ movie?.belongs_to_collection?.name }}</h3>
+            <img
+              [src]="
+                environment.tmdbUrlImage +
+                '' +
+                (movie?.belongs_to_collection?.backdrop_path || movie?.belongs_to_collection?.poster_path)
+              "
+              alt=""
+            />
+          </div>
+          <div class="companies">
+            <h3>Produtoras</h3>
+            <div class="companie-list">
+              <div
+                *ngFor="let companie of movie?.production_companies"
+                class="companie"
+              >
+                <img
+                  [src]="environment.tmdbUrlImage + '' + companie.logo_path"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <ng-template #showLoader>
+    <div class="loader" >
+      <app-loader-detail-movie></app-loader-detail-movie>
+    </div>
+  </ng-template>
+
+</section>

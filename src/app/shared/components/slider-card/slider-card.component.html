@@ -1,0 +1,17 @@
+<section class="slider-card">
+  <h2 class="title">{{ title }}</h2>
+
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    (init)="slickInit()"
+    (breakpoint)="breakpoint()"
+    (afterChange)="afterChange()"
+    (beforeChange)="beforeChange()"
+  >
+    <div ngxSlickItem *ngFor="let card of movies" class="slide">
+      <app-card [card]="card"></app-card>
+    </div>
+  </ngx-slick-carousel>
+</section>
