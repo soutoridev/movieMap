@@ -1,0 +1,10 @@
+.loader-card-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+}

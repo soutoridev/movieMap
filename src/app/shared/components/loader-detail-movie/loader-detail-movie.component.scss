@@ -1,0 +1,12 @@
+.loader-detail {
+  display: flex;
+  justify-content: start;
+  gap: 34px;
+
+  .loader-image {
+    width: 30%;
+  }
+  .loader-infos {
+    width: 70%;
+  }
+}

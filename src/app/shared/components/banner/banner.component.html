@@ -1,0 +1,50 @@
+<div class="banner">
+  <app-search></app-search>
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    (init)="slickInit()"
+    (breakpoint)="breakpoint()"
+    (afterChange)="afterChange()"
+    (beforeChange)="beforeChange()"
+  >
+    <div ngxSlickItem *ngFor="let slide of movies" class="slide">
+      <div
+        class="card-banner"
+        [ngStyle]="{
+          'background-image':
+            'url(' + environment.tmdbUrlImage + '' + slide.backdrop_path + ')'
+        }"
+      >
+        <div class="box-text">
+          <div class="text">
+            <h2>{{ slide.title }}</h2>
+            <p class="description">{{ slide.overview }}</p>
+
+            <div class="genres">
+              <div *ngFor="let id of slide?.genre_ids">
+                {{ getGenreById(id) }}
+              </div>
+            </div>
+            <span>{{ slide?.release_date | date : "dd/MM/YYY" }}</span>
+
+            <button
+              mat-button
+              color="accent"
+              class="bt-seemoor"
+              (click)="navigateToSomeRoute(slide?.id)"
+            >
+              Saber mais +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+</div>
+
+<!-- <button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button> -->

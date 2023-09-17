@@ -1,0 +1,12 @@
+<section class="home">
+  <app-header></app-header>
+  <app-banner [movies]="movies"></app-banner>
+
+  <main class="main">
+    <app-slider-card [movies]="topRated" [title]="'Bem avaliados'"></app-slider-card>
+    <app-slider-card [movies]="nowPlaying" [title]="'Em Cartaz'"></app-slider-card>
+    <app-slider-card [movies]="upcoming" [title]="'Próximos lançamentos'"></app-slider-card>
+  </main>
+</section>
+
+

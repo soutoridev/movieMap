@@ -1,0 +1,40 @@
+<div class="search">
+  <form>
+    <input
+      type="text"
+      placeholder="Procurando por um filme específico?"
+      aria-label="Number"
+      matInput
+      [formControl]="searchControl"
+      [matAutocomplete]="auto"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+    />
+
+    <mat-form-field appearance="fill" class="select">
+      <mat-label>Seleciona a categoria</mat-label>
+      <mat-select [(value)]="selected" >
+        <mat-option value="option1" *ngFor="let item of GENRERS" [value]="item.id" (click)="onSelectionChange(item.id)">{{
+          item.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option.title"
+        (click)="navigateToSomeRoute(option.id)"
+      >
+        {{ option.title }}
+      </mat-option>
+
+    </mat-autocomplete>
+    <div class="lds-ring" *ngIf="loaderSearch">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,41 @@
+<app-header></app-header>
+<app-search></app-search>
+
+<section class="list" *ngIf="!loader; else showloader">
+  <h2>Genero x</h2>
+
+  <div class="card-line" *ngFor="let item of movies">
+    <img [src]="environment.tmdbUrlImage + '' + item?.backdrop_path" alt="" />
+    <div class="infos">
+      <h2>{{ item?.title }}</h2>
+      <p>{{ item?.overview }}</p>
+
+      <div class="genres">
+        <div *ngFor="let genre of item?.genre_ids">
+          {{ getGenreById(genre) }}
+        </div>
+      </div>
+      <a class="bt-seemoor" (click)="navigateToSomeRoute(item?.id)"
+        >Saber mais +</a
+      >
+    </div>
+  </div>
+</section>
+
+<ng-template #showloader>
+  <section class="list">
+    <app-loader-card></app-loader-card>
+  </section>
+</ng-template>
+
+<div class="box-paginate">
+  <mat-paginator
+  #paginator
+    [length]="total_results"
+    [pageSize]="20"
+    (page)="pageEvent($event)"
+    aria-label="Select page"
+    class="paginate"
+  >
+  </mat-paginator>
+</div>
