@@ -12,6 +12,7 @@
     .header-logo-menu {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 50px;
       h1 {
         font-size: 18px;
@@ -28,9 +29,15 @@
           list-style: none;
           font-size: 16px;
           color: #fff;
+          cursor: pointer;
+
+          &:hover {
+            color: red;
+          }
         }
       }
     }
+
     .custom-outline {
       border-color: red !important;
       color: red !important;
