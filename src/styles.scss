@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '~@angular/material' as mat;
+@use "~@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,13 +19,15 @@ $movieMap-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$movieMap-theme: mat.define-light-theme((
-  color: (
-    primary: $movieMap-primary,
-    accent: $movieMap-accent,
-    warn: $movieMap-warn,
+$movieMap-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $movieMap-primary,
+      accent: $movieMap-accent,
+      warn: $movieMap-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -35,5 +36,54 @@ $movieMap-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #000; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #000;
+}
+
+.slick-dots {
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+}
+
+.slick-dots li button {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #ff0000;
+}
+
+.banner {
+  .slick-dots {
+    text-align: center;
+    max-width: 70%;
+    margin: 0 15%;
+  }
+
+  .slick-dots li {
+    display: inline-block;
+  }
+
+  .slick-dots li button {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .slick-dots li.slick-active button {
+    background-color: red;
+  }
+}

@@ -6,23 +6,30 @@
   .title {
     color: #fff;
     font-size: 32px;
-    margin-bottom: 60px;
+    position: relative;
+    margin-bottom: 40px;
+
+    &::after {
+      content: "";
+      background-color: red;
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+      width: 150px;
+      height: 3px;
+    }
   }
 }
 
 .card {
   position: relative;
+  color: #fff ;
   img {
     height: 200px;
     width: 100%;
   }
-  color: #fff ;
 }
 
 .slick-slide {
-  margin-right: 20px; /* Adjust the margin value as per your preference */
-}
-.slick-prev .slick-arrow {
-  color: red;
-  background: #000 !important;
+  margin-right: 20px;
 }

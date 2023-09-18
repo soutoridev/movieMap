@@ -21,26 +21,11 @@ export class BannerComponent implements OnInit {
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 4000,
     infinite: true,
+    dots: true
   };
-
-  slickInit() {
-    console.log('slick initialized');
-  }
-
-  breakpoint() {
-    console.log('breakpoint');
-  }
-
-  afterChange() {
-    console.log('afterChange');
-  }
-
-  beforeChange() {
-    console.log('beforeChange');
-  }
 
   getGenreById(id: number) {
     let genre = GENRERS.find((el: any) => el.id === id);

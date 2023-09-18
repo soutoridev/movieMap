@@ -2,7 +2,7 @@
 <app-search></app-search>
 
 <section class="list" *ngIf="!loader; else showloader">
-  <h2>Genero x</h2>
+  <h2 class="title">{{ total_results }} resultados encontrados</h2>
 
   <div class="card-line" *ngFor="let item of movies">
     <img [src]="environment.tmdbUrlImage + '' + item?.backdrop_path" alt="" />
