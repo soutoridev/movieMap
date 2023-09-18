@@ -1,22 +1,27 @@
 .details {
   padding: 24px;
   margin-top: 100px;
+
   .container {
     width: 80%;
     margin: 0 auto;
     display: flex;
     gap: 24px;
+
     .box-left {
       width: 30%;
-      .img-web {
+
+      .img-web,
+      .img-app {
         width: 100%;
         display: block;
       }
+
       .img-app {
-        width: 100%;
         display: none;
       }
     }
+
     .box-rigth {
       box-sizing: border-box;
       width: 70%;
@@ -32,11 +37,14 @@
       .list-micro-info {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 20px;
         margin: 20px 0;
+
         .item {
           display: flex;
           align-items: center;
+
           .mat-icon {
             font-size: 16px;
             height: 16px;
@@ -67,11 +75,11 @@
 
         .companies {
           width: 50%;
+
           .companie-list {
             display: flex;
             gap: 24px;
-
-            flex-flow: wrap;
+            flex-wrap: wrap;
 
             .companie {
               padding: 10px;
@@ -100,6 +108,7 @@
   .details {
     padding: 24px;
     margin-top: 100px;
+
     .container {
       width: 100%;
       flex-direction: column;
@@ -108,14 +117,14 @@
         width: 100%;
 
         .img-web {
-          width: 100%;
           display: none;
         }
+
         .img-app {
-          width: 100%;
           display: block;
         }
       }
+
       .box-rigth {
         box-sizing: border-box;
         width: 100%;
@@ -131,17 +140,16 @@
         .list-micro-info {
           display: flex;
           align-items: center;
-          flex-wrap: wrap;
           gap: 20px;
           margin: 10px 0;
+
           .item {
             display: flex;
             align-items: center;
-            font-size: 12px;
+
             .mat-icon {
               font-size: 12px;
               height: 16px;
-              color: #fff;
             }
           }
         }
@@ -162,8 +170,8 @@
           margin-top: 20px;
 
           .belongs-collection {
-            margin-top: 20px;
             max-width: 70%;
+
             img {
               width: 100%;
             }
@@ -171,11 +179,11 @@
 
           .companies {
             width: 100%;
+
             .companie-list {
               display: flex;
               gap: 24px;
-
-              flex-flow: wrap;
+              flex-wrap: wrap;
 
               .companie {
                 padding: 10px;
@@ -194,22 +202,23 @@
     }
   }
 }
-@media screen and(min-width: 769px) and (max-width: 1100px) {
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
   .details {
     padding: 24px;
     margin-top: 100px;
+
     .container {
       .box-left {
-        width: 30%;
         .img-web {
-          width: 100%;
           display: block;
         }
+
         .img-app {
-          width: 100%;
           display: none;
         }
       }
+
       .box-rigth {
         box-sizing: border-box;
         width: 70%;
@@ -227,13 +236,14 @@
           align-items: center;
           gap: 20px;
           margin: 20px 0;
+
           .item {
             display: flex;
             align-items: center;
+
             .mat-icon {
               font-size: 16px;
               height: 16px;
-              color: #fff;
             }
           }
         }
@@ -250,9 +260,11 @@
           justify-content: start;
           grid-gap: 24px;
           gap: 50px;
+          margin-top: 20px;
 
           .belongs-collection {
             max-width: 30%;
+
             img {
               width: 100%;
             }
@@ -260,11 +272,11 @@
 
           .companies {
             width: 50%;
+
             .companie-list {
               display: flex;
               gap: 24px;
-
-              flex-flow: wrap;
+              flex-wrap: wrap;
 
               .companie {
                 padding: 10px;
