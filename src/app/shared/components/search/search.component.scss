@@ -15,7 +15,7 @@
     border: initial;
     outline: 0;
     position: absolute;
-    padding-left: 50px;
+    padding-left: 24px;
     box-sizing: border-box;
     font-size: 16px;
     border-radius: 30px 0 0 30px;
@@ -58,7 +58,6 @@
     width: 200px;
     position: absolute;
     right: 0;
-
   }
 
   @keyframes lds-ring {
@@ -76,4 +75,40 @@
 }
 .mat-form-field-underline {
   display: none;
+}
+
+@media screen and (max-width: 959px) {
+  .search {
+    width: 90%;
+    margin: 0 5%;
+    input,
+    input:focus,
+    input:active {
+      width: 85%;
+      height: 100%;
+    }
+
+    .select {
+      width: 50px;
+      .mat-form-field-label {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (min-width: 959px) and (max-width: 1600px) {
+  .search {
+    input,
+    input:focus,
+    input:active {
+      width: 61%;
+      height: 100%;
+    }
+    .select {
+      width: auto;
+      .mat-form-field-label {
+        display: block;
+      }
+    }
+  }
 }

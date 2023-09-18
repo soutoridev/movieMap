@@ -17,8 +17,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { LoaderCardComponent } from './components/loader-card/loader-card.component';
 import { LoaderDetailMovieComponent } from './components/loader-detail-movie/loader-detail-movie.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
-
+import { LoaderHomeComponent } from './components/loader-home/loader-home.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CardComponent,
     SearchComponent,
     LoaderCardComponent,
-    LoaderDetailMovieComponent
+    LoaderDetailMovieComponent,
+    LoaderHomeComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +43,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatIconModule,
     MatSelectModule,
     NgxSkeletonLoaderModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    RouterModule
   ],
   exports:[
     HeaderComponent,
@@ -53,7 +55,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     LoaderCardComponent,
     LoaderDetailMovieComponent,
     NgxSkeletonLoaderModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    LoaderHomeComponent
   ]
 })
 export class SharedModule { }

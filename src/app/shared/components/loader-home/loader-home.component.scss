@@ -1,0 +1,16 @@
+.loader-home {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  gap: 30px;
+
+
+  div.left {
+    width: 30%;
+    display: flex;
+    align-items: center;
+  }
+  div.rigth {
+    width: 60%;
+  }
+}
